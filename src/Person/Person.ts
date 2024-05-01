@@ -9,9 +9,10 @@ export abstract class Person {
     protected phoneNumber: string;
     protected Nationally: string; 
     protected address: string;    
-    protected passportNumber: string;
+    private passportNumber: string;
 
     constructor(firstName: string, lastName: string,gender:Gender,dateOfBirth:string, email: string, phoneNumber: string, nationality: string, address: string, passportNumber: string){
+        
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
