@@ -15,7 +15,7 @@ export class BookingFlight {
     } 
     
     // get number
-    public getGateNumber (flight: Flight, date: DateTime){
+    public getGateNumber (flight: Flight, date: DateTime) {
         if (this.getFlight() == flight && date.isEqual(date)) {
             return flight.getGate()
         }

@@ -19,22 +19,30 @@ export class Booking {
     ) { }
 
     // get bookingReferenceNumber
-    public getBookingReferenceNumber = (): string => this.bookingReferenceNumber;
+    public getBookingReferenceNumber(): string {
+        return this.bookingReferenceNumber
+    }
 
     // is return
-    public isReturn = (): boolean => this.returnTrip !== undefined;
-
+    public isReturn(): boolean{
+        return this.returnTrip !== undefined;
+    }
     //get passenger
-    public getPassenger = (): Passenger => this.passenger;
+    public getPassenger(): Passenger{
+        return this.passenger;
+    } 
 
     //get mealType
-    public getMealType = () : Mealtype => this.mealType;
-
+    public getMealType() : Mealtype{
+         return this.mealType;
+    }
     //get trip
-    public getDepartureTrip = (): Trip => this.departureTrip;
-
+    public getDepartureTrip(): Trip{
+        return this.departureTrip;
+    }
+    
     //get Flight number 
-    public getNumberOfFlights = (pilot: AirlinePilot, date: DateTime): number => {
+    public getNumberOfFlights(pilot: AirlinePilot, date: DateTime): number{
         let numberOfFlight: number = 0;
         for (let bookingFlight of this.departureTrip.getBookingFlights()) {
             if (bookingFlight.getFlight().getRoute().getDepartureDateTime().isEqual(date) && bookingFlight.getFlight().getPilot() === pilot) {
@@ -45,8 +53,9 @@ export class Booking {
     };
 
     // is flight
-    public isFlight = (flight: Flight): boolean => this.departureTrip.getBookingFlights().some(bookingFlight => bookingFlight.getFlight() === flight);
-
+    public isFlight(flight: Flight): boolean{
+        return this.departureTrip.getBookingFlights().some(bookingFlight => bookingFlight.getFlight() === flight);
+    }
     // get gate number of flight
     public getFlightGate = (flightNumber: string, date: DateTime): Gate | undefined => {
         for (let bookingFlight of this.departureTrip.getBookingFlights()) {

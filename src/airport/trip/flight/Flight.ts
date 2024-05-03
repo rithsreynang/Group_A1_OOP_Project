@@ -6,7 +6,8 @@ import { Airplane } from "../Airplane/Airplane";
 import { Route } from "../route/Route";
 
 export class Flight {
-    constructor(private flightNumber: string,
+    constructor(
+        private flightNumber: string,
         private airLinePilot: AirlinePilot,
         private airline: Airline,
         private route: Route,
